@@ -5,14 +5,12 @@ const server = http.createServer((req, res) => {
 
   res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
 
-  (function renderLink() {
-    let link = '';
+  let link = '';
 
-    for (partsPath of path) {
-      link += `/${partsPath}`;
-      res.write(`/<a class="links" href="/${link}">${partsPath}</a>`);
-    }
-  })();
+  for (partsPath of path) {
+    link += `/${partsPath}`;
+    res.write(`/<a class="links" href="/${link}">${partsPath}</a>`);
+  }
 
   res.write('<style>.links {font-size: 25px; margin-right: 15px}</style>');
 

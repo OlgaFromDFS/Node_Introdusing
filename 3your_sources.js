@@ -1,9 +1,9 @@
 require('dotenv').config();
 
-const URL = process.env.FILE;
+const filePath = process.env.FILE;
 
 const fs = require('fs');
 
-const content = fs.readFileSync(URL, 'utf-8');
+const content = fs.readFileSync(filePath, 'utf-8');
 
 console.log(content);
